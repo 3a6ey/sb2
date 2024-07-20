@@ -1,5 +1,8 @@
 -- loadfile('SB2 Script/SCRIPT.lua')()
 -- loadstring(game:HttpGet('https://raw.githubusercontent.com/noobscripter38493/Swordburst-2/main/script.lua'))()
+if getgenv().SB2Script then
+    return
+end
 
 getgenv().SB2Script = true
 
@@ -1664,7 +1667,7 @@ do
             TextDisappear = false,
             Callback = function(text)
                 local n = tonumber(text)
-                if n and n >= 0 and n <= 50 then
+                if n and n >= 0 and n <= 120 then
                     settings.KA_Range = n
                 end
             end
@@ -1673,7 +1676,7 @@ do
         combat:AddSlider({
             Name = "Kill Aura Range",
             Min = 0,
-            Max = 50,
+            Max = 120,
             Default = settings.KA_Range,
             Color = Color3.new(255, 255, 255),
             Increment = 1,
